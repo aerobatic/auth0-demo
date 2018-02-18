@@ -4,7 +4,7 @@ deploy:
   directory: .
 plugins:
   - name: auth0
-    path: /protected
+    path: /members
     options:
       clientId: boV7bNX3MdGs7RUMtYNvYTQ258z255a6
       clientSecret: $AUTH0_CLIENT_SECRET
