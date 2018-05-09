@@ -43,7 +43,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="header">
-      <h1 class="title">Auth Success</h1>
+      <h1 class="title">Members Only Section</h1>
     </section>
 
     <!-- Example -->
@@ -59,10 +59,7 @@
     </div>
 
     <p>
-      <form action="/protected" method="GET">
-        <input type="hidden" name="__logout" value="1" />
-        <button class="button button-primary" role="button" type="submit">Log out</button>
-      </form>
+      <a class="button button-primary" href="/members?__logout=1">Logout</a>
     </p>
   </div>
 

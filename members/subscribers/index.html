@@ -34,8 +34,8 @@
   <div class="navbar-spacer"></div>
     <nav class="navbar">
       <div class="container">
-        <a href="http://www.aerobatic.com"><img src="/images/aerobatic_logo.png"></a>
-        <a href="https://auth0.com"><img src="/images/auth0-logo.png"></a>
+          <a href="http://www.aerobatic.com"><img src="/images/aerobatic_logo.png"></a>
+          <a href="https://auth0.com"><img src="/images/auth0-logo.png"></a>
       </div>
     </nav>
 
@@ -43,29 +43,24 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="header">
-      <h1 class="title">Auth0 Demo</h1>
+      <h1 class="title">Subscribers Only Section</h1>
     </section>
-
-    <!-- Why use Skeleton -->
-    <div class="docs-section" id="intro">
-      <p>
-        The Aerobatic auth0 plugin is an easy way to add <a href="https://auth0.com">Auth0</a> authentication to your static site. Now you can have a full blown registration system in place for your Aerobatic sites with just a few lines of YAML.        
-        Read the <a href="https://www.aerobatic.com/docs/plugins/auth0/">full documentation</a> or view the <a href="https://github.com/aerobatic/auth0-demo">source code</a>.
-      </p>
-    </div>
 
     <!-- Example -->
     <div class="docs-section examples" id="examples">
-      <h6 class="docs-header">Example</h6>
+      <h6 class="docs-header">Greetings <span id="username"></span>, we've been expecting you!</h6>
+      <script>
+        document.getElementById('username').innerText =
+          window.__aerobatic__ ? window.__aerobatic__.user.name : 'Test User';
+      </script>
       <div class="row example">
-          <p>You must register to access this site</p>
-          <p>
-            <a class="button button-primary" href="/members?initial_screen=signUp">Sign Up</a>
-            <a class="button button-primary" href="/members?initial_screen=login">Log In</a>
-          </p>
-          <p>To implement Auth0 for your own website, see the Aerobatic <a href="https://www.aerobatic.com/docs/plugins/auth0/">documentation</a>.</p>
+		    <img src="/images/success.gif">
       </div>
     </div>
+
+    <p>
+      <a class="button button-primary" href="/members?__logout=1">Logout</a>
+    </p>
   </div>
 
 
