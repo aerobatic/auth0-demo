@@ -50,8 +50,18 @@
     <div class="docs-section examples" id="examples">
       <h6 class="docs-header">Greetings <span id="username"></span>, we've been expecting you!</h6>
       <script>
-        document.getElementById('username').innerText =
-          window.__aerobatic__ ? window.__aerobatic__.user.name : 'Test User';
+        (function() {
+          // Parse the user object from the document.cookie
+          var user;
+          var userMatch = document.cookie.match(/[; ]?user=([^\s;]*)/);
+          if (userMatch && userMatch.length > 1) {
+            user = JSON.parse(unescape(userMatch[1]));
+          }
+
+          if (user) {
+            document.getElementById('username').innerText = user.name;    
+          }
+        })();
       </script>
       <div class="row example">
 		    <img src="/images/success.gif">
